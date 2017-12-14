@@ -15,6 +15,10 @@ TagManager:
   - plen1
   - plen2
   - bullerplayer
+  - bossmap
+  - bag_bullet
+  - leftfire
+  - rightfire
   layers:
   - Default
   - TransparentFX

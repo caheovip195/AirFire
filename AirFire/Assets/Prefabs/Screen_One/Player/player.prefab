@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374644284215114}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -148,6 +148,8 @@ MonoBehaviour:
   maxX: 3.7
   minY: -35
   maxY: -20.5
+  bag_player: {fileID: 0}
+  healing: []
 --- !u!212 &212346557528649484
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,16 +16,14 @@ public class FireBulletPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (GamePlayController.instance.checkDie)
+            return;
         if (canShoot)
         {
             StartCoroutine(Shoot());
-            
         }
     }
-    private void FixedUpdate()
-    {
-       
-    }
+   
     IEnumerator Shoot()
     {
         canShoot = false;

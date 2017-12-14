@@ -8,15 +8,18 @@ public class ControllerScore : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         instance = this;
+        //get value to cache
         score = PlayerPrefs.GetInt("save_score",0);
-        gameObject.GetComponent<Text>().text = "Score : " + score;
-	}
+        gameObject.GetComponent<Text>().text =score+"";
+        PlayerPrefs.SetInt("save_score",0);
+    }
 	
 	// Update is called once per frame
 	public void AddScore(int scoreadd)
     {
         score += scoreadd;
+        //save value from cache
         PlayerPrefs.SetInt("save_score", score);
-        gameObject.GetComponent<Text>().text = "Score : " + score;
+        gameObject.GetComponent<Text>().text =score+"";
     }
 }

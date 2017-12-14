@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400781553572456}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -100,9 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  bag_enemy: {fileID: 1448338193203862, guid: de52bda6a46f78f45a974dc7adf3b94d, type: 2}
-  buff_bullet1: {fileID: 1007355169514734, guid: 07d30f6558cb3304cb77664ad7dac73d,
-    type: 2}
+  bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!212 &212451838203218700
 SpriteRenderer:
   m_ObjectHideFlags: 1

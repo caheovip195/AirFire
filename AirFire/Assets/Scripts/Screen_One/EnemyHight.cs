@@ -79,6 +79,7 @@ public class EnemyHight : MonoBehaviour {
             Destroy(obj1, 1);
             Destroy(obj2, 1);
             Destroy(gameObject);
+            GamePlayController.instance.GameOverButton();
         }
         if (collision.tag == "bullerplayer")
         {

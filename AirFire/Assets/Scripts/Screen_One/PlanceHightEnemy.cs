@@ -12,6 +12,7 @@ public class PlanceHightEnemy : MonoBehaviour {
     private GameObject player;
     private Vector3 position;
     private BoxCollider2D box;
+    private GameObject bossmap;
 
     private void Awake()
     {
@@ -26,6 +27,11 @@ public class PlanceHightEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        bossmap = GameObject.FindGameObjectWithTag("bossmap");
+        if (bossmap)
+        {
+            Destroy(gameObject);
+        }
         if (player)
         {
             position = player.transform.position;

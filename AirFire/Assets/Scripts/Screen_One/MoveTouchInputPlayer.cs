@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveTouchInputPlayer : MonoBehaviour {
-
     public float speed = 2f;
     public float minX = -3.7f;
     public float maxX = 3.7f;
@@ -15,22 +14,29 @@ public class MoveTouchInputPlayer : MonoBehaviour {
     [SerializeField]
     private GameObject[] healing;
     private int point_dead = 0;
-    private void Awake()
-    {
-       
-    }
+   
     private void Start()
     {
         mousePo = transform.position;
     }
+
     private void Update()
     {
-        PlayerMoveButton();
+        if (GamePlayController.instance.checkDie == false)
+        {
+            PlayerMoveButton();
+        }
+        
         if (point_dead >= 5)
         {
             GameObject obj= Instantiate(bag_player, transform.position, Quaternion.identity);
-            Destroy(gameObject);
             Destroy(obj, 1);
+            Destroy(gameObject);
+            GamePlayController.instance.GameOverButton();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GamePlayController.instance.GamePauseButton();
         }
     }
 
@@ -61,6 +67,14 @@ public class MoveTouchInputPlayer : MonoBehaviour {
             {
                 Destroy(healing[i]);
             }
+        }
+        if (collision.tag == "bossmap")
+        {
+            for (int i = 0; i < healing.Length; i++)
+            {
+                Destroy(healing[i]);
+            }
+            point_dead = 5;
         }
     }
 }

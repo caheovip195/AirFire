@@ -12,10 +12,6 @@ public class BulletEnemy : MonoBehaviour {
     {
         myBody = GetComponent<Rigidbody2D>();
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
 
     private void Update()
     {
@@ -23,19 +19,17 @@ public class BulletEnemy : MonoBehaviour {
         {
             Destroy(gameObject, 0);
         }
-    }
-    // Update is called once per frame
-    void FixedUpdate () {
         myBody.velocity = new Vector2(0, -speed);
     }
+    // Update is called once per frame
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
                 GameObject obj = Instantiate(bag_player, collision.transform.position, Quaternion.identity);
-                Destroy(gameObject);
                 Destroy(obj,1);
+                Destroy(gameObject);
         }
     }
     

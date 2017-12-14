@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MainScene\MainController.cs" />
     <Compile Include="Assets\Scripts\Screen_One\BGScrolling.cs" />
     <Compile Include="Assets\Scripts\Screen_One\BossMap.cs" />
     <Compile Include="Assets\Scripts\Screen_One\BulletEnemy.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\Screen_One\EnemyHight.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletEnemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletPlayer.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\GamePlayController.cs" />
     <Compile Include="Assets\Scripts\Screen_One\MoveTouchInputPlayer.cs" />
     <Compile Include="Assets\Scripts\Screen_One\PlanceHightEnemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\Spawner.cs" />

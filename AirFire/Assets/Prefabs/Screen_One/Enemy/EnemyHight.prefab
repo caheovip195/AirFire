@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 60014272002825230}
   m_Layer: 0
   m_Name: EnemyHight
-  m_TagString: Untagged
+  m_TagString: plen1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411448685728140}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263943a01a0b53240911807d9294f1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bag: {fileID: 1448338193203862, guid: de52bda6a46f78f45a974dc7adf3b94d, type: 2}
+  bag: {fileID: 1385139300580870, guid: 9b59bf04c1babd847944b86849301c8b, type: 2}
   speed: 5
 --- !u!212 &212540019155248398
 SpriteRenderer:

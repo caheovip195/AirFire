@@ -6,10 +6,9 @@ public class BulletFirst : MonoBehaviour {
     public float speed;
     [SerializeField]
     private GameObject bag_enemy;
-    [SerializeField]
-    private GameObject buff_bullet1;
+    
     private Rigidbody2D mybody;
-    private Vector3 poitDead;
+
     private void Awake()
     {
         mybody = GetComponent<Rigidbody2D>();
@@ -20,7 +19,8 @@ public class BulletFirst : MonoBehaviour {
 
     private void Update()
     {
-        if (transform.position.y > -21)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (transform.position.y > -20.5 || GamePlayController.instance.checkDie==true||player==null)
         {
             Destroy(gameObject, 0);
         }
@@ -30,16 +30,14 @@ public class BulletFirst : MonoBehaviour {
     {
         if (collision.tag == "Enemy")
         {
-            int rd = Random.Range(1, 30);
-            if (rd == 15)
-            {
-                GameObject laze = Instantiate(buff_bullet1, transform.position, Quaternion.identity) as GameObject;
-                Destroy(laze, 8);
-            }
             ControllerScore.instance.AddScore(10);
             GameObject obj= Instantiate(bag_enemy, collision.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(obj, 1);
+            Destroy(gameObject);
+        }
+        if (collision.tag == "boss1_body")
+        {
             Destroy(gameObject);
         }
     }
