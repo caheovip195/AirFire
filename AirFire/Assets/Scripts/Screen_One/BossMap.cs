@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossMap : MonoBehaviour {
-
-    public float speed = 1f;
-    public float speed2 = 2f;
+    public GameObject efffire;
+    public float speed = 1f, speed2 = 2f;
     [SerializeField]
     private GameObject bulletBoss;
     [SerializeField]
@@ -17,21 +16,12 @@ public class BossMap : MonoBehaviour {
     [SerializeField]
     private GameObject bag_boss;
     private Rigidbody2D myBody;
-    private float minX = -1.25f;
-    private float maxX = 1.25f;
-    private float minY = -25.0f;
-    private float maxY = -22.5f;
-    private float possitionX = 0.0f;
-    private float possitionY = 0.0f;
-    private bool move_boss = true;
-    private bool flagfire = true;
-    private bool flag = true;
-    private bool flagCreateEnemyLeft = true;
-    private bool flagCreateEnemyRight = true;
-    private float time = 0;
-    private float lastime = 0;
-    private float scoreDead = 0;
+    private float minX = -1.25f, maxX = 1.25f, minY = -25.0f, maxY = -22.5f, possitionX = 0.0f, possitionY = 0.0f;
+    private bool move_boss = true, flagfire = true, flag = true, flagCreateEnemyLeft = true, flagCreateEnemyRight = true,
+        is_die_air_left = true, is_die_air_right = true;
+    private float time = 0,lastime = 0, scoreDead = 0;
     private Animator ani;
+    private GameObject air_left, air_right;
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -40,6 +30,8 @@ public class BossMap : MonoBehaviour {
 
     private void Start()
     {
+        air_left = transform.GetChild(1).transform.GetChild(0).gameObject;
+        air_right = transform.GetChild(1).transform.GetChild(1).gameObject;
         ani.SetBool("bag_left", false);
         ani.SetBool("two_bag", false);
         ani.SetBool("bag_boss", false);
@@ -89,13 +81,23 @@ public class BossMap : MonoBehaviour {
             {
                 StartCoroutine(createEnemyChidrenRight());   
             }
-            if (scoreDead == 3000)
+            Vector3 temp;
+            if (scoreDead >=3000 && is_die_air_left)
             {
+                temp = air_left.transform.position;
+                Instantiate(efffire,temp , Quaternion.identity, air_left.transform);
+                temp.x += 0.3f;
                 ani.SetBool("bag_left", true);
+                is_die_air_left = false;
+                ControllerScore.instance.AddScore(2000);
             }
-            if (scoreDead == 7000)
+            if (scoreDead >= 7000 && is_die_air_right)
             {
+                temp = air_right.transform.position;
+                Instantiate(efffire, temp, Quaternion.identity, air_left.transform);
                 ani.SetBool("two_bag", true);
+                is_die_air_right = false;
+                ControllerScore.instance.AddScore(2000);
             }
         }
     }
@@ -155,7 +157,7 @@ public class BossMap : MonoBehaviour {
             {
                 GameObject bag = Instantiate(bagBullet, collision.transform.position, Quaternion.identity);
                 Destroy(bag, 0.2f);
-                scoreDead += 10;
+                scoreDead += 5;
                 Debug.Log("Score : " + scoreDead);
                 if (scoreDead == 10000)
                 {

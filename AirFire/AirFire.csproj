@@ -85,12 +85,16 @@
     <Compile Include="Assets\Scripts\Screen_One\BulletFirst.cs" />
     <Compile Include="Assets\Scripts\Screen_One\ControllerScore.cs" />
     <Compile Include="Assets\Scripts\Screen_One\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Screen_One\EnemyHight.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\EnemysRun.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletEnemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletPlayer.cs" />
     <Compile Include="Assets\Scripts\Screen_One\GamePlayController.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\iTween1.cs" />
     <Compile Include="Assets\Scripts\Screen_One\MoveTouchInputPlayer.cs" />
     <Compile Include="Assets\Scripts\Screen_One\PlanceHightEnemy.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\PlanceRunsAir.cs" />
     <Compile Include="Assets\Scripts\Screen_One\Spawner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

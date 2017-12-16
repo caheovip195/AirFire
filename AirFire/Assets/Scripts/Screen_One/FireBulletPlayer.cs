@@ -29,16 +29,10 @@ public class FireBulletPlayer : MonoBehaviour {
         canShoot = false;
         Vector3 temp = transform.position;
         temp.y += 0.2f;
+        temp.x += -0.15f;
         initObj= Instantiate(bullet, temp, Quaternion.identity);
+        Destroy(initObj, 2.0f);
         yield return new WaitForSeconds(0.2f);
         canShoot = true;
-    }
-    private void Bullet_Destroy(GameObject initObj)
-    {
-        Vector3 destroy_bullet = bullet.transform.position;
-        if (initObj.transform.position.y> -20.5)
-        {
-            Destroy(bullet);
-        }
     }
 }

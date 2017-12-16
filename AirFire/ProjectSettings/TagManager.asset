@@ -19,6 +19,7 @@ TagManager:
   - bag_bullet
   - leftfire
   - rightfire
+  - possitions_run1
   layers:
   - Default
   - TransparentFX
