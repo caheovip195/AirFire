@@ -3,23 +3,26 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
+
 	[SerializeField] private float turnSpeed;
 	[SerializeField] private float movementSpeed;
 	[SerializeField] private float distanceRedirect;
-    [SerializeField] private GameObject[] position_go;
-	private int nodeIndex;
+    [SerializeField] GameObject [] position_go;
+    [SerializeField] GameObject bag;
+    private int nodeIndex;
 	Transform target;
-	public Transform [] node;
+	private Transform [] node;
 	Vector3 direction;
 	Quaternion rotation;
 	Quaternion lockRotation;
+    private int dem = 0;
 	void Start ()
 	{
         //int rd = Random.Range(0, position_go.Length);
-        node = new Transform[position_go[0].transform.childCount];
+        node = new Transform[position_go[GamePlayController.checkCreateRunsEnemy].transform.childCount];
         for (int i = 0; i < node.Length; i++)
         {
-            node[i] = position_go[0].transform.GetChild(i).transform;
+            node[i] =position_go[GamePlayController.checkCreateRunsEnemy].transform.GetChild(i).transform;
         }
         nodeIndex = 0;
         target = node[nodeIndex];
@@ -27,7 +30,12 @@ public class EnemyController : MonoBehaviour
 
 	void Update ()
 	{
-		direction = target.position - transform.position;
+        if (dem >= 3)
+        {
+            ControllerScore.instance.AddScore(20);
+            Destroy(gameObject);
+        }
+        direction = target.position - transform.position;
 		if (direction != Vector3.zero)
 		{
 			lockRotation = Quaternion.LookRotation (direction, Vector3.back);
@@ -48,4 +56,25 @@ public class EnemyController : MonoBehaviour
 		}
 		else Destroy (this.gameObject);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            GameObject obj1 = Instantiate(bag, transform.position, Quaternion.identity);
+            GameObject obj2 = Instantiate(bag, collision.gameObject.transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
+            Destroy(obj1, 1);
+            Destroy(obj2, 1);
+            Destroy(gameObject);
+            GamePlayController.instance.GameOverButton();
+        }
+        if (collision.tag == "bullerplayer")
+        {
+            GameObject obj1 = Instantiate(bag, transform.position, Quaternion.identity);
+            dem += 1;
+            Destroy(obj1, 1);
+            Destroy(collision.gameObject);
+        }
+    }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlanceRunsAir : MonoBehaviour {
     [SerializeField] private GameObject enemy;
     private float lastTime, time;
-	// Use this for initialization
+    // Use this for initialization
+    [SerializeField] GameObject [] lineGoEnemyRuns;
 	void Start () {
         updateTime();
 	}
@@ -16,10 +17,13 @@ public class PlanceRunsAir : MonoBehaviour {
         {
             updateTime();
             CreateEnemy();
+           // GamePlayController.checkCreateRunsEnemy = false;
         }
 	}
     private void CreateEnemy()
     {
+        // GamePlayController.checkCreateRunsEnemy = true;
+        GamePlayController.checkCreateRunsEnemy = Random.Range(0, 2);
         Vector3 temp = transform.position;
         for(int i = 0; i < 4; i++)
         {
@@ -30,6 +34,6 @@ public class PlanceRunsAir : MonoBehaviour {
     private void updateTime()
     {
         lastTime = Time.time;
-        time = lastTime + Random.Range(10.0f,15.0f);
+        time = lastTime + Random.Range(7.0f,12.0f);
     }
 }

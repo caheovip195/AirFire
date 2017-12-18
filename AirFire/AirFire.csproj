@@ -87,7 +87,6 @@
     <Compile Include="Assets\Scripts\Screen_One\Enemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Screen_One\EnemyHight.cs" />
-    <Compile Include="Assets\Scripts\Screen_One\EnemysRun.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletEnemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\FireBulletPlayer.cs" />
     <Compile Include="Assets\Scripts\Screen_One\GamePlayController.cs" />

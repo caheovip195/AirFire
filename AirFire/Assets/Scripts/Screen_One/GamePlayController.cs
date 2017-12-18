@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GamePlayController : MonoBehaviour {
     public static GamePlayController instance;
-
     [SerializeField]
     private GameObject pausePanel;
     [SerializeField]
@@ -13,7 +12,7 @@ public class GamePlayController : MonoBehaviour {
     [SerializeField]
     private GameObject gameWinPanel;
     public bool checkDie=false;
-
+    public static int checkCreateRunsEnemy = 0;
     public void GameWin()
     {
         //gameWinPanel.SetActive(true);
@@ -24,7 +23,6 @@ public class GamePlayController : MonoBehaviour {
     {
         SceneManager.LoadScene("MainScreen");
     }
-
     public void GameOverButton()
     {
         StartCoroutine(timeoutGameOver());
@@ -52,6 +50,7 @@ public class GamePlayController : MonoBehaviour {
 
     private void Awake()
     {
+        Screen.orientation = ScreenOrientation.PortraitUpsideDown;
         MakeInstance();
     }
     private void MakeInstance()

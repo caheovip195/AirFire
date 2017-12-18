@@ -4274,6 +4274,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1058216390
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.29531682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -21.439053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937783823536470, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1074300192
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,6 +4418,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1440346148443766, guid: 7e65548e3f6719c46ad81de0a2b70e06, type: 2}
+  lineGoEnemyRuns:
+  - {fileID: 1974986387070948, guid: 42857e958e35aa544b0c40d11b5a3f08, type: 2}
+  - {fileID: 1990744563518036, guid: b9bf8e1ed8c2923438317583029b8390, type: 2}
 --- !u!4 &1079757423
 Transform:
   m_ObjectHideFlags: 0
@@ -5859,7 +5904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aae1e206de631a449a34c6f02e391b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 0.4
   background_count: 0
   background_height: 0
   boss_map: {fileID: 1998883959610074, guid: aff2373c9e33a38449365e46da478042, type: 2}
