@@ -9,6 +9,7 @@ public class MainController : MonoBehaviour {
 
     private void Awake()
     {
+        Screen.orientation = ScreenOrientation.PortraitUpsideDown;
         MakeInstance();
     }
     private void MakeInstance()

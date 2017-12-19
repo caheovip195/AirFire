@@ -13,6 +13,11 @@ public class PlanceRunsAir : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GameObject bossmap = GameObject.FindGameObjectWithTag("bossmap");
+        if (bossmap)
+        {
+            Destroy(gameObject);
+        }
         if (Time.time > time + lastTime)
         {
             updateTime();
@@ -25,7 +30,7 @@ public class PlanceRunsAir : MonoBehaviour {
         // GamePlayController.checkCreateRunsEnemy = true;
         GamePlayController.checkCreateRunsEnemy = Random.Range(0, 2);
         Vector3 temp = transform.position;
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 6; i++)
         {
             Instantiate(enemy, temp, Quaternion.identity);
             temp.y += 2.0f;
@@ -34,6 +39,6 @@ public class PlanceRunsAir : MonoBehaviour {
     private void updateTime()
     {
         lastTime = Time.time;
-        time = lastTime + Random.Range(7.0f,12.0f);
+        time = Random.Range(10.0f,20.0f);
     }
 }

@@ -31,10 +31,6 @@ public class EnemyHight : MonoBehaviour {
         {
             movePlance1();
         }
-        else
-        {
-            movePlance2();
-        }
         if (dem >=3)
         {
             ControllerScore.instance.AddScore(20);

@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4937783823536470}
   m_Layer: 0
   m_Name: bulletthree
-  m_TagString: Untagged
+  m_TagString: bullerplayer3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af43e4ebabbda54fb00a67df88ae132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!114 &114628668460745514
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af43e4ebabbda54fb00a67df88ae132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!114 &114732620498626188
 MonoBehaviour:
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af43e4ebabbda54fb00a67df88ae132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!212 &212609031448243356
 SpriteRenderer:

@@ -10,16 +10,15 @@ TagManager:
   - bullet_enemy2
   - destroyPlanceEnemy
   - EnemyHight
-  - Plance1
-  - Plance2
-  - plen1
-  - plen2
   - bullerplayer
   - bossmap
   - bag_bullet
-  - leftfire
-  - rightfire
-  - possitions_run1
+  - item1
+  - item2
+  - item3
+  - bullerplayer3
+  - bullerplayer2
+  - plen1
   layers:
   - Default
   - TransparentFX

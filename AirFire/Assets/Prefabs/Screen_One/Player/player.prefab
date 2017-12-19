@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 114749898678952120}
   - component: {fileID: 50792811134500060}
   - component: {fileID: 60806133212555574}
+  - component: {fileID: 114214711251875282}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374644284215114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -34.47, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.69, y: -34.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &60806133212555574
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -132,6 +133,22 @@ PolygonCollider2D:
       - {x: 0.005, y: -0.59499997}
       - {x: 0.035, y: -0.565}
       - {x: 0.155, y: -0.585}
+--- !u!114 &114214711251875282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374644284215114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4f7f387936c08438312db85360ca52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet:
+  - {fileID: 1564597351595618, guid: 00d4a37d4e09dd545a0a787fa9a1d503, type: 2}
+  - {fileID: 1788929159114070, guid: 8efb97c3c9a0817469baca8c89e83bb2, type: 2}
+  - {fileID: 1167303674799700, guid: 913a92418aed2aa47a79e4c4257b967d, type: 2}
+  speedFire: 0.45
 --- !u!114 &114749898678952120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,8 +165,13 @@ MonoBehaviour:
   maxX: 3.7
   minY: -35
   maxY: -20.5
-  bag_player: {fileID: 0}
-  healing: []
+  bag_player: {fileID: 1756522438874594, guid: c9d8f949b6e54a14fab8ac5c61960f92, type: 2}
+  healing:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &212346557528649484
 SpriteRenderer:
   m_ObjectHideFlags: 1

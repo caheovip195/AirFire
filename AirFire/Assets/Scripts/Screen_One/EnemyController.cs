@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] private float movementSpeed;
 	[SerializeField] private float distanceRedirect;
     [SerializeField] GameObject [] position_go;
+    [SerializeField] GameObject [] itemPlayer;
     [SerializeField] GameObject bag;
     private int nodeIndex;
 	Transform target;
@@ -32,8 +33,16 @@ public class EnemyController : MonoBehaviour
 	{
         if (dem >= 3)
         {
+           
+            if (checkScoreEnemyRuns(ControllerScore.scoreEnemysRun)==true)
+            {
+               Instantiate(itemPlayer[Random.Range(0, itemPlayer.Length)], transform.position, Quaternion.identity);
+               Debug.Log("Da tao ra item cho player");
+            }
+            Debug.Log("Diem ban enemy Run : " + ControllerScore.scoreEnemysRun);
+            ControllerScore.scoreEnemysRun += 1;
             ControllerScore.instance.AddScore(20);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         direction = target.position - transform.position;
 		if (direction != Vector3.zero)
@@ -46,6 +55,18 @@ public class EnemyController : MonoBehaviour
 		if (Vector2.Distance (transform.position, target.position) <= distanceRedirect)
 			GetNextNode ();
 	}
+    
+    private bool checkScoreEnemyRuns(int score)
+    {
+        for (int i = 1; i <=score/2; i++)
+        {
+            if (6 * i == score)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
 	void GetNextNode ()
 	{
@@ -71,6 +92,7 @@ public class EnemyController : MonoBehaviour
         }
         if (collision.tag == "bullerplayer")
         {
+            Debug.Log("Da tram voi bullet player");
             GameObject obj1 = Instantiate(bag, transform.position, Quaternion.identity);
             dem += 1;
             Destroy(obj1, 1);

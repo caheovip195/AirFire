@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ControllerScore : MonoBehaviour {
     public static ControllerScore instance;
+    public static int scoreEnemysRun = 0;
     private int score;
 	// Use this for initialization
 	void Start () {
