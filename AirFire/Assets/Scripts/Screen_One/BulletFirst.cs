@@ -32,6 +32,8 @@ public class BulletFirst : MonoBehaviour {
         {
             ControllerScore.instance.AddScore(10);
             GameObject obj= Instantiate(bag_enemy, collision.transform.position, Quaternion.identity);
+            //AudioSource audio = obj.GetComponent<AudioSource>();
+           // audio.Play();
             Destroy(collision.gameObject);
             Destroy(obj, 1);
             Destroy(gameObject);

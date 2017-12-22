@@ -95,8 +95,9 @@
     <Compile Include="Assets\Scripts\Screen_One\MoveTouchInputPlayer.cs" />
     <Compile Include="Assets\Scripts\Screen_One\PlanceHightEnemy.cs" />
     <Compile Include="Assets\Scripts\Screen_One\PlanceRunsAir.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\ScrollGround.cs" />
     <Compile Include="Assets\Scripts\Screen_One\Spawner.cs" />
-    <Compile Include="Assets\Source\VisualWaypoint.cs" />
+    <Compile Include="Assets\Scripts\Screen_One\VisualWaypoint.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

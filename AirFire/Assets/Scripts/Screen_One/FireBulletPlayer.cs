@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class FireBulletPlayer : MonoBehaviour {
 
-
+    private AudioSource audio;
     [SerializeField]
     private GameObject [] bullet;
     private bool canShoot = true;
     private GameObject initObj;
     public float speedFire = 0.45f;
     private int bullet_target = 0;
+    private bool is_play = true;
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Use this for initialization
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         if (GamePlayController.instance.checkDie)
             return;
-        if (canShoot)
+        if (canShoot && is_play)
         {
             StartCoroutine(Shoot());
         }
@@ -24,6 +29,8 @@ public class FireBulletPlayer : MonoBehaviour {
    
     IEnumerator Shoot()
     {
+        is_play = false;
+        audio.Play();
         canShoot = false;
         Vector3 temp = transform.position;
         temp.y += 0.8f;
@@ -32,6 +39,7 @@ public class FireBulletPlayer : MonoBehaviour {
         Destroy(initObj, 2.0f);
         yield return new WaitForSeconds(speedFire);
         canShoot = true;
+        is_play = true;
     }
     private void DestroyBullet(Collider2D collision)
     {

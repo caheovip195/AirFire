@@ -21,7 +21,7 @@ public class BossMap : MonoBehaviour {
         is_die_air_left = true, is_die_air_right = true;
     private float time = 0,lastime = 0, scoreDead = 0;
     private Animator ani;
-    private GameObject air_left, air_right;
+    private GameObject air_left, air_right, body;
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -30,6 +30,7 @@ public class BossMap : MonoBehaviour {
 
     private void Start()
     {
+        body = transform.GetChild(0).gameObject;
         air_left = transform.GetChild(1).transform.GetChild(0).gameObject;
         air_right = transform.GetChild(1).transform.GetChild(1).gameObject;
         ani.SetBool("bag_left", false);
@@ -161,12 +162,11 @@ public class BossMap : MonoBehaviour {
                 Debug.Log("Score : " + scoreDead);
                 if (scoreDead == 10000)
                 {
-                    for (int i = 0; i < 4; i++)
+                    Vector3 temp = body.transform.position;
+                    for(int i= 0; i < 4; i++)
                     {
-                        Vector3 temp = transform.position;
-                        temp.y += Random.Range(-1.3f, 1.3f);
-                        GameObject obj = Instantiate(bag_boss, temp, Quaternion.identity);
-                        Destroy(obj, 5);
+                        temp.y += Random.Range(-1.0f, 1.0f);
+                        Instantiate(bag_boss, temp, Quaternion.identity, body.transform);
                     }
                     move_boss = false;
                     ani.SetBool("bag_boss", true);

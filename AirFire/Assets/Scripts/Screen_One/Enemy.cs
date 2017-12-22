@@ -5,13 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public float speed;
-
+   // private AudioSource audio;
     private Rigidbody2D myBody;
     [SerializeField]
     private GameObject bag;
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
+       // audio = GetComponent<AudioSource>();
     }
 
 	// Update is called once per frame
@@ -30,10 +31,11 @@ public class Enemy : MonoBehaviour {
             GameObject bag_enemy= Instantiate(bag, transform.position, Quaternion.identity);
             GameObject bag_player=  Instantiate(bag, collision.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
-            Destroy(gameObject);
             Destroy(bag_enemy, 1);
             Destroy(bag_player, 1);
             GamePlayController.instance.GameOverButton();
+           // audio.Play();
+            Destroy(gameObject);
         }
     }
 }

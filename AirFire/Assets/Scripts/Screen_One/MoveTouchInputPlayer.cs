@@ -61,7 +61,7 @@ public class MoveTouchInputPlayer : MonoBehaviour {
             Destroy(healing[5-point_dead-1]);
             point_dead = point_dead + 1;   
         }
-        if (collision.tag == "Enemy" ||collision.tag=="plen1"||collision.tag=="plen2")
+        if (collision.tag == "Enemy" ||collision.tag == "plen1"||collision.tag == "plen2"||collision.tag == "enemyrun")
         {
             for(int i = 0; i < healing.Length; i++)
             {
@@ -76,5 +76,6 @@ public class MoveTouchInputPlayer : MonoBehaviour {
             }
             point_dead = 5;
         }
+        
     }
 }
