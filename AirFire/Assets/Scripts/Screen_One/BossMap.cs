@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossMap : MonoBehaviour {
     public GameObject efffire;
+    public Image healBar;
     public float speed = 1f, speed2 = 2f;
     [SerializeField]
     private GameObject bulletBoss;
@@ -158,22 +159,20 @@ public class BossMap : MonoBehaviour {
             {
                 GameObject bag = Instantiate(bagBullet, collision.transform.position, Quaternion.identity);
                 Destroy(bag, 0.2f);
-                scoreDead += 500;
+                scoreDead += 5;
+                healBar.fillAmount = (10000 - scoreDead) / 10000;
                 Debug.Log("Score : " + scoreDead);
                 if (scoreDead == 10000)
                 {
                     Vector3 temp = body.transform.position;
-                    for(int i= 0; i < 4; i++)
-                    {
-                        temp.y += Random.Range(-1.0f, 1.0f);
-                        Instantiate(bag_boss, temp, Quaternion.identity, body.transform);
-                    }
+                    GameObject obj= Instantiate(bag_boss, temp, Quaternion.identity, body.transform);
                     move_boss = false;
-                    ani.SetBool("bag_boss", true);
+                    // ani.SetBool("bag_boss", true);
+                    Destroy(obj, 0.3f);
                     GamePlayController.instance.checkDie = true;
                     ControllerScore.instance.AddScore(5000);
                     GamePlayController.instance.GameWin();
-                    Destroy(gameObject, 5);
+                    Destroy(gameObject,0.3f);
 
                 }
             }   

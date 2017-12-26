@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - destroy_pl
   - bullet_enemy1
-  - bullet_enemy2
   - destroyPlanceEnemy
   - EnemyHight
   - bullerplayer

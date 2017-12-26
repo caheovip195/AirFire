@@ -22,10 +22,10 @@ public class FireBulletEnemy : MonoBehaviour {
     IEnumerator Shoot()
     {
         fireTime = false;
-        Vector3 temp =transform.position;
+        yield return new WaitForSeconds(Random.Range(3f,7f));
+        Vector3 temp = transform.position;
         temp.y += -0.3f;
         Instantiate(bulletEnemy, temp, Quaternion.identity);
-        yield return new WaitForSeconds(Random.Range(1f,3f));
         fireTime = true;
     }
 }

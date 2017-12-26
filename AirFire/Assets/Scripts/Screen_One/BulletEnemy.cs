@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour {
     public float speed = 13f;
-    private Rigidbody2D myBody;
     private int score_dead = 0;
     [SerializeField]
     private GameObject bag_player;
-    private void Awake()
-    {
-        myBody = GetComponent<Rigidbody2D>();
-    }
-
     private void Update()
     {
         if (transform.position.y < -38f)
         {
             Destroy(gameObject, 0);
         }
-        myBody.velocity = new Vector2(0, -speed);
+        //myBody.velocity = new Vector2(0, -speed);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
     // Update is called once per frame
 

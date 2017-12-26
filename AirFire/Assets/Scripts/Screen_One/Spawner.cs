@@ -25,11 +25,12 @@ public class Spawner : MonoBehaviour {
     }
     IEnumerator initSpawner()
     {
-        yield return new WaitForSeconds( Random.Range(1, 3));
+        yield return new WaitForSeconds( Random.Range(7, 10));
         float minX = -box.bounds.size.x / 2.0f;
         float maxX = box.bounds.size.x / 2.0f;
         Vector3 temp = transform.position;
         temp.x = Random.Range(minX, maxX);
+        temp.y += 5.0f;
         Instantiate(Enemy[Random.Range(0,Enemy.Length)], temp, Quaternion.identity);
         StartCoroutine(initSpawner());
     }
