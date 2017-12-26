@@ -78,6 +78,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ControllerScrene.cs" />
+    <Compile Include="Assets\Scripts\LoadScreen\LoadBarController.cs" />
+    <Compile Include="Assets\Scripts\LoadScreen\LoadScreen.cs" />
     <Compile Include="Assets\Scripts\MainScene\MainController.cs" />
     <Compile Include="Assets\Scripts\Screen_One\BGScrolling.cs" />
     <Compile Include="Assets\Scripts\Screen_One\BossMap.cs" />

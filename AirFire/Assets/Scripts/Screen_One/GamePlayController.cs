@@ -38,14 +38,22 @@ public class GamePlayController : MonoBehaviour {
     {
        
         yield return new WaitForSeconds(5.0f);
+       
         gameWinPanel.SetActive(true);
         Time.timeScale = 1;
     }
 
     public void gameReload()
     {
-        SceneManager.LoadScene("ScreenOne");
-        Time.timeScale = 1;
+        ControllerScrene.screen = 1;
+        SceneManager.LoadScene("LoadScreen");
+        //SceneManager.LoadScene("ScreenOne");
+        //Time.timeScale = 1;
+    }
+    public void NextScreen()
+    {
+        ControllerScrene.screen = 2;
+        SceneManager.LoadScene("LoadScreen");
     }
 
     private void Awake()

@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Screen/ScreenOne.unity
     guid: cf50a15da83231149939295609d808a1
+  - enabled: 1
+    path: Assets/Screen/LoadScreen.unity
+    guid: f0871d9a072906249ae74958cc6f0549
+  - enabled: 1
+    path: Assets/Screen/ScreenTwo.unity
+    guid: 19a03ff46dd87214fbfb9d8dec1fd06a

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af43e4ebabbda54fb00a67df88ae132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 23
   bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!114 &114785777771157626
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af43e4ebabbda54fb00a67df88ae132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 23
   bag_enemy: {fileID: 1422803946101202, guid: a81838ffa4d873d49885627c9d85c302, type: 2}
 --- !u!212 &212176958700950356
 SpriteRenderer:

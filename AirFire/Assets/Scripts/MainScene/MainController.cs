@@ -21,9 +21,8 @@ public class MainController : MonoBehaviour {
     }
     public void gameStart()
     {
-        SceneManager.LoadScene("ScreenOne");
-        Time.timeScale = 1;
-       
+        SceneManager.LoadScene("LoadScreen");
+        ControllerScrene.screen = 1;
     }
     public void gameSetting()
     {

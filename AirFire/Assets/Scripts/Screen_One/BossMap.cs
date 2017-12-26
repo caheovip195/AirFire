@@ -158,7 +158,7 @@ public class BossMap : MonoBehaviour {
             {
                 GameObject bag = Instantiate(bagBullet, collision.transform.position, Quaternion.identity);
                 Destroy(bag, 0.2f);
-                scoreDead += 5;
+                scoreDead += 500;
                 Debug.Log("Score : " + scoreDead);
                 if (scoreDead == 10000)
                 {

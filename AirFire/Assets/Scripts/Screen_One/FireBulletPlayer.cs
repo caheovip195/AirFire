@@ -15,6 +15,7 @@ public class FireBulletPlayer : MonoBehaviour {
     private void Start()
     {
         audio = GetComponent<AudioSource>();
+        audio.Play();
     }
     // Use this for initialization
     // Update is called once per frame
@@ -39,6 +40,7 @@ public class FireBulletPlayer : MonoBehaviour {
         Destroy(initObj, 2.0f);
         yield return new WaitForSeconds(speedFire);
         canShoot = true;
+        audio.Play();
         is_play = true;
     }
     private void DestroyBullet(Collider2D collision)
